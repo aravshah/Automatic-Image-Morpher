@@ -1,0 +1,101 @@
+<!-- Some of the following code was inspired by Prof. Donald Patterson's flask tutorial -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Image Morpher</title>
+    </head>
+
+    <body>
+         <div class="container">
+             <div class="row">
+                <div class="col text-center">
+                    <h1>Image Morpher</h1>
+                    <h4>By: Arav Shah</h4>
+                </div>
+            </div>
+            <br></br>
+            <h2>Example:</h2>
+            <div class="row align-items-end">
+                <div class="col text-center">
+                    <img height="150" width="150" src="{{my_im1}}" class="img-thumbnail" />
+                    <h3>Image 1</h3>
+                </div>
+                <div class="col text-center">
+                    <img height="150" width="150" src="{{my_im2}}" class="img-thumbnail" />
+                    <h3>Image 2</h3>
+                </div>
+                <div class="col text-center">
+                    <img height="150" width="150" src="{{my_out}}" class="img-thumbnail" />
+                    <h3>Final Result</h3>
+                </div>
+            </div>
+            <hr/>
+
+            {% if results is defined %}
+                <h2>Your Input:</h2>
+                {% for result in results %}    
+                    <div class="row align-items-end">
+                        <div class="col text-center">
+                            <img height="150" width="150" src="{{result[0]}}" class="img-thumbnail" />
+                        </div>
+                        <div class="col text-center">
+                            <img height="150" width="150" src="{{result[1]}}" class="img-thumbnail" />
+                        </div>
+                        <div class="col text-center">
+                            <img height="150" width="150" src="{{result[2]}}" class="img-thumbnail" />
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr/>
+            {% endif %}
+
+            <h2>Upload:</h2>
+            <div class="row align-items-end">
+                <div class="col text-center">
+                    <form action="/" method=post enctype="multipart/form-data">
+                        <input type="file" name="file1" />
+                        <br>
+                        <input type="file" name="file2" />
+                        <br>
+                        Gif length <input type="range"  id="length" name="length" min="1" max="5" step=".25" value="2.5" onchange="updateRate()">
+                        <span id="len_val"> 2.5 </span> 
+                        <br/>
+                        <input type="submit" value="Upload" />
+                    </form>
+                </div>
+                <div class="col text-center">
+                    <p>Your GIF will be displayed shortly</p>
+                    <p>This will take about 3 minutes</p>
+                </div>
+            </div>
+            {% for message in get_flashed_messages() %}    
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+
+            <!-- <footer position="absolute" bottom="0" width="100%" height="2.5rem"> 
+                &#169; Image Morpher created by Arav Shah
+            </footer> -->
+            
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="../static/script.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
