@@ -3,7 +3,11 @@
 
 ### Examples
 
-Some sample output gifs are available in the "static/output_images" folder.
+![alt-text](https://github.com/aravshah/Image-Morpher/blob/main/static/output_images/morph_person1_and_person2.gif)
+![alt-text](https://github.com/aravshah/Image-Morpher/blob/main/static/output_images/person5_and_person6_15-43-58.gif)
+![alt-text](https://github.com/aravshah/Image-Morpher/blob/main/static/output_images/person2_and_person6_enlraged_15-56-27.gif)
+
+More sample output gifs are available in the "static/output_images" folder.
 
 The coresponding input images can be found in the "static/ex_imgs" folder.
 
