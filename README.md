@@ -1,9 +1,16 @@
 # Image-Morpher
 #### By: Arav Shah
 
+### Examples
+
+Some sample output gifs are available in the "static/output_images" folder.
+
+The coresponding input images can be found in the "static/ex_imgs" folder.
+
 ### Usage
 
-To use the image morpher, clone the github directory and run “website.py” in your terminal. Open a web browser and paste the link from the terminal into a new tab. From there, upload two square pictures (with file type: “.jpg,” “.jpeg,” or “.png”) and select the length of the gif you desire. Your resulting gif and input images will be displayed under a new url after about 3 minutes. You may then continue to use the image morpher and it will continue displaying all past results until you return to the home page.
+To use the image morpher, clone the github directory and run “website.py” in your terminal. Open a web browser and paste the link from the terminal into a new tab. From there, upload two square pictures (with file type: “.jpg,” “.jpeg,” or “.png”) and select the length of the gif you desire. Your resulting gif and input images will be displayed under a new url after about 3 minutes. You may then continue to use the image morpher, and it will continue displaying all past results until the server is restarted.
+
 #### Notes: 
 The image morpher will resize all input images to 224 by 224 pixels. Therefore, you must upload a square photo to avoid the image being distorted and the model being unable to make accurate key point predictions. As a result, your final gif will also be 224 by 224 pixels.
 
