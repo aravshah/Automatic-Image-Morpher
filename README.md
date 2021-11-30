@@ -1,4 +1,4 @@
-# Image-Morpher
+# Automatic Image-Morpher
 #### By: Arav Shah
 
 ### Examples
